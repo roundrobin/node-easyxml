@@ -245,7 +245,7 @@ EasyXml.prototype.parseChildElement = function(parentXmlNode, parentObjectNode) 
         el.text = child.toString();
         /* istanbul ignore else */
       } else if (typeof child === 'string') {
-        el.text = child;
+        el.text = '<![CDATA['+child+']]>';
       } else {
         throw new Error(key + " contained unknown_data_type: " + typeof child);
       }
